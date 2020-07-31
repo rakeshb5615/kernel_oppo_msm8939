@@ -2453,6 +2453,7 @@ static int lis3dh_acc_get_recoverymode(char *str)
 }
 __setup("recoverymode=", lis3dh_acc_get_recoverymode);
 #endif
+#endif
 
 static int lis3dh_acc_probe(struct i2c_client *client,
 		const struct i2c_device_id *id)
