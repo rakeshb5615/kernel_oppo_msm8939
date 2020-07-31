@@ -53,6 +53,7 @@ int opchg_get_prop_charger_voltage_now(struct opchg_charger *chip)
 			        return 0;
 			    }
 			    V_charger = (int)results.physical/1000;
+                            V_charger = V_charger * 2;
 				break;
 			}
 

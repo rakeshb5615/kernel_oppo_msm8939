@@ -1,14 +1,15 @@
-/* Copyright (c) 2020,the_shahnawaz_sheikh, The Linux Foundation. All rights reserved.
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License version 2 and
- * only version 2 as published by the Free Software Foundation.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- */
+/* Copyright (c) 2020, The Linux Foundation. All rights reserved.
+*  Copyright (c) 2020, the_shahnawaz_sheikh (sheikhshahnawaz41299).
+*
+* This program is free software; you can redistribute it and/or modify
+* it under the terms of the GNU General Public License version 2 and
+* only version 2 as published by the Free Software Foundation.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*/
 
 #include "msm8916-audio-internal_codec.dtsi"
 #include "msm8916-camera-sensor-mtp-15399.dtsi"
@@ -70,7 +71,7 @@
 	
 	       /* External I2C controlled buck regulators */
    
-     	/*ncp6335d_regulator:	ncp6335d-regulator@1c {
+     	ncp6335d_regulator:	ncp6335d-regulator@1c {
 				compatible = "onnn,ncp6335d-regulator";
 				reg = <0x1c>;
 				onnn,vsel = <0>;
@@ -86,7 +87,7 @@
 				onnn,vsel-gpio = <&msm_gpio 111 1>;
 				onnn,discharge-enable;
 				onnn,restore-reg;
-	    };*/
+	    };
 
 	};
 
@@ -108,6 +109,7 @@
 			st,g-range = <2>;
 			st,negate-x;
 			st,negate-z;
+            status = "ok";
 		};
 
 		memsic@30 { /* Magnetic field sensor */
@@ -127,7 +129,7 @@
 			vdd-supply = <&pm8916_l17>;
 			vio-supply = <&pm8916_l6>;
 			apds,irq-gpio = <&msm_gpio 113 0x02>;
-            status = "disable";
+            status = "ok";
 		};
 		
 		kionix@1f {
@@ -144,6 +146,7 @@
 			kionix,g-range = <2>;
 			kionix,negate-x;
 			kionix,res-12bit;
+            status = "ok";
 		};
 		
 		akm@c {
@@ -159,6 +162,7 @@
 			/delete-property/ ak,layout;
 			ak,layout = <0x1>;
 			ak,auto-report;
+            status = "ok";
 		};
 		
 		yamaha@2e {
